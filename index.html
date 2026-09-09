@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ร้านค้าความรักจากพี่ค้าบอ้วน - ส่งความรัก ความคิดถึง กอด และอื่นๆ ถึงคนที่คุณรัก">
+  <title>💕 ร้านค้าของพี่ค้าบอ้วน</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating Decorations -->
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar" style="display: none;">
+    <div class="navbar-brand">
+      <span>♡</span>
+      <span>Love Shop</span>
+    </div>
+    <button class="navbar-cart" id="navCartBtn" onclick="goToPage('cart')">
+      🛒
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </nav>
+
+  <!-- ===== PAGE 1: GIFT WELCOME ===== -->
+  <div class="page active" id="page-welcome">
+    <div class="gift-scene">
+      <div class="sparkle-ring"></div>
+      <div class="welcome-label">— a special gift for you —</div>
+      <h1 class="welcome-title">
+        มีของขวัญชิ้นพิเศษ<br>
+        จาก<span class="highlight">พี่ค้าบอ้วน</span>
+      </h1>
+      <div class="divider"></div>
+      <p class="welcome-subtitle">
+        ข้างในเต็มไปด้วยความทรงจำดีๆ<br>
+        และความรักที่อยากส่งถึงอ้วน
+      </p>
+
+      <!-- 3D Gift Box -->
+      <div class="gift-box-wrapper" id="giftBoxWrapper" onclick="openGift()">
+        <div class="gift-glow"></div>
+        <div class="gift-box" id="giftBox">
+          <!-- Lid group (all lid faces rotate together) -->
+          <div class="gift-lid" id="giftLid">
+            <div class="lid-face lid-top"></div>
+            <div class="lid-face lid-front"></div>
+            <div class="lid-face lid-back"></div>
+            <div class="lid-face lid-left"></div>
+            <div class="lid-face lid-right"></div>
+            <!-- Ribbon on lid top -->
+            <div class="lid-ribbon-h"></div>
+            <div class="lid-ribbon-cross"></div>
+            <!-- Bow -->
+            <div class="gift-bow">
+              <div class="bow-loop-l"></div>
+              <div class="bow-loop-r"></div>
+              <div class="bow-knot"></div>
+              <div class="bow-tail-l"></div>
+              <div class="bow-tail-r"></div>
+            </div>
+          </div>
+          <!-- Body group -->
+          <div class="gift-body">
+            <div class="body-face body-front">
+              <div class="ribbon-v"></div>
+            </div>
+            <div class="body-face body-back">
+              <div class="ribbon-v"></div>
+            </div>
+            <div class="body-face body-left">
+              <div class="ribbon-v"></div>
+            </div>
+            <div class="body-face body-right">
+              <div class="ribbon-v"></div>
+            </div>
+            <div class="body-face body-bottom"></div>
+            <!-- Inner glow when opened -->
+            <div class="gift-inner-glow" id="giftInnerGlow"></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-open-gift" id="btnOpenGift" onclick="openGift()">
+        <span class="btn-icon">🎁</span>
+        เปิดของขวัญ
+      </button>
+      <div class="tap-hint">แตะที่กล่องหรือปุ่มเพื่อเปิด</div>
+    </div>
+  </div>
+
+  <!-- ===== MEMORY PAGES (4 pages) ===== -->
+  <div class="page" id="page-memory-1">
+    <div class="memory-container">
+      <div class="memory-progress">
+        <div class="memory-progress-bar" style="width: 25%"></div>
+      </div>
+      <div class="memory-label">— our memories —</div>
+      <div class="memory-gallery">
+        <div class="memory-photo photo-main" style="--delay: 0.1s; --rotate: -2deg;">
+          <img src="images/เที่ยว1.jpg" alt="วันแรกที่เจอกัน">
+        </div>
+        <div class="memory-photo photo-small photo-pos-1" style="--delay: 0.35s; --rotate: 5deg;">
+          <img src="images/เที่ยว2.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-2" style="--delay: 0.55s; --rotate: -4deg;">
+          <img src="images/เที่ยว3.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-3" style="--delay: 0.7s; --rotate: 3deg;">
+          <img src="images/เที่ยว4.PNG" alt="">
+        </div>
+      </div>
+      <h2 class="memory-title">ทริปแรกของเรา</h2>
+      <div class="divider"></div>
+      <p class="memory-text">
+        ครั้งแรกที่เราไปเที่ยวด้วยกัน<br>
+        เป็นการไปเที่ยวที่เรามีความทรงจำดีๆเยอะเลย
+        พี่มีความสุขมากเลย ทั้งสนุกและใจฟู<br>
+        รู้เลยว่าอ้วนคือคนที่ใช่ ♡
+      </p>
+      <div class="memory-dots">
+        <span class="memory-dot active"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+      </div>
+      <button class="btn-primary" onclick="goToPage('memory-2')">
+        ถัดไป →
+      </button>
+    </div>
+  </div>
+
+  <div class="page" id="page-memory-2">
+    <div class="memory-container">
+      <div class="memory-progress">
+        <div class="memory-progress-bar" style="width: 50%"></div>
+      </div>
+      <div class="memory-label">— our memories —</div>
+      <div class="memory-gallery">
+        <div class="memory-photo photo-main" style="--delay: 0.1s; --rotate: 2deg;">
+          <img src="images/ข้าว1.PNG" alt="โมเม้นที่ประทับใจ">
+        </div>
+        <div class="memory-photo photo-small photo-pos-1" style="--delay: 0.3s; --rotate: -6deg;">
+          <img src="images/ข้าว2.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-2" style="--delay: 0.5s; --rotate: 4deg;">
+          <img src="images/ข้าว3.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-3" style="--delay: 0.65s; --rotate: -3deg;">
+          <img src="images/ข้าว4.PNG" alt="">
+        </div>
+      </div>
+      <h2 class="memory-title">ทุกมื้อที่ได้กินด้วยกัน</h2>
+      <div class="divider"></div>
+      <p class="memory-text">
+        กินอะไรก็อร่อยที่สุดดด<br>
+        ทุกอย่างเลยถ้าได้นั่งกินข้างๆกัน ♡<br>
+      </p>
+      <div class="memory-dots">
+        <span class="memory-dot"></span>
+        <span class="memory-dot active"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+      </div>
+      <button class="btn-primary" onclick="goToPage('memory-3')">
+        ถัดไป →
+      </button>
+    </div>
+  </div>
+
+  <div class="page" id="page-memory-3">
+    <div class="memory-container">
+      <div class="memory-progress">
+        <div class="memory-progress-bar" style="width: 75%"></div>
+      </div>
+      <div class="memory-label">— our memories —</div>
+      <div class="memory-gallery">
+        <div class="memory-photo photo-main" style="--delay: 0.1s; --rotate: -1deg;">
+          <img src="images/หนัง1.PNG" alt="สิ่งที่รักในตัวเธอ">
+        </div>
+        <div class="memory-photo photo-small photo-pos-1" style="--delay: 0.4s; --rotate: 4deg;">
+          <img src="images/หนัง2.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-2" style="--delay: 0.55s; --rotate: -5deg;">
+          <img src="images/หนัง3.PNG" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-3" style="--delay: 0.7s; --rotate: 6deg;">
+          <img src="images/หนัง4.PNG" alt="">
+        </div>
+      </div>
+      <h2 class="memory-title">หนังที่ได้ดูด้วยกัน</h2>
+      <div class="divider"></div>
+      <p class="memory-text">
+        ได้นั่งข้างๆ<br>
+        ได้กอด ได้กุมมือ อบอุ่นหัวใจที่สุด<br>
+        ฉากโรแมนคิกมึความหมายขึ้นมาเลย
+        ตอนกลับก็ยังคิดถึงกัน
+      </p>
+      <div class="memory-dots">
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot active"></span>
+        <span class="memory-dot"></span>
+      </div>
+      <button class="btn-primary" onclick="goToPage('memory-4')">
+        ถัดไป →
+      </button>
+    </div>
+  </div>
+
+  <div class="page" id="page-memory-4">
+    <div class="memory-container">
+      <div class="memory-progress">
+        <div class="memory-progress-bar" style="width: 100%"></div>
+      </div>
+      <div class="memory-label">— our memories —</div>
+      <div class="memory-gallery">
+        <div class="memory-photo photo-main" style="--delay: 0.1s; --rotate: 1deg;">
+          <img src="images/น่ารัก.jpg" alt="กินข้าวด้วยกัน">
+        </div>
+        <div class="memory-photo photo-small photo-pos-1" style="--delay: 0.35s; --rotate: -5deg;">
+          <img src="images/น่ารัก1.jpg" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-2" style="--delay: 0.5s; --rotate: 3deg;">
+          <img src="images/น่ารัก2.jpg" alt="">
+        </div>
+        <div class="memory-photo photo-small photo-pos-3" style="--delay: 0.7s; --rotate: -4deg;">
+          <img src="images/น่ารัก3.JPG" alt="">
+        </div>
+      </div>
+      <h2 class="memory-title">สิ่งที่รักในตัวอ้วน</h2>
+      <div class="divider"></div>
+      <p class="memory-text">
+        รักทุกอย่างในตัวอ้วน<br>
+        รักรอยยิ้ม รักกลิ่นหอม รักแม้ตอนงอน รักหมา รักเบบี๋<br>
+        พี่อยากบอกว่า... รักมากนะ ♡
+      </p>
+      <div class="memory-dots">
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot"></span>
+        <span class="memory-dot active"></span>
+      </div>
+      <button class="btn-primary" onclick="goToPage('shop')">
+        ♡ ไปเลือกสินค้ากันเลย
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== PAGE 2: SHOP ===== -->
+  <div class="page" id="page-shop">
+    <div class="shop-header">
+      <h1>เลือกสรรความรักที่ต้องการ</h1>
+      <div class="delivery-badge">
+        <span>♡</span>
+        <span>พร้อมส่งทันที ตลอด 24 ชม.</span>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <!-- Products rendered by JS -->
+    </div>
+    <button class="btn-take-all" id="btnTakeAll" onclick="takeEverything()">
+      ♡ เอาทุกอย่างงง
+    </button>
+  </div>
+
+  <!-- ===== PROPOSAL PAGE ===== -->
+  <div class="page" id="page-proposal">
+    <div class="proposal-container">
+      <div class="proposal-line" id="proposalLine1">ถึงมันจะช้าไปหน่อย</div>
+      <div class="proposal-line" id="proposalLine2">แต่พี่อยากบอกว่า...</div>
+      <div class="proposal-line proposal-main" id="proposalLine3">เป็นแฟนกันนะ ♡</div>
+      <div class="proposal-buttons" id="proposalButtons">
+        <button class="btn-proposal-yes" id="btnYes" onclick="proposalAccepted()">
+          ตกลงค่ะ ♡
+        </button>
+        <button class="btn-proposal-no" id="btnNo" onmouseover="dodgeButton()" onclick="dodgeButton()">
+          ม่ายย
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE 3: CART ===== -->
+  <div class="page" id="page-cart">
+    <div class="cart-header">
+      <h1>รถเข็นของคุณ</h1>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total" id="cartTotal" style="display:none;">
+      <span class="cart-total-label">รวมทั้งหมด</span>
+      <span class="cart-total-value" id="cartTotalValue">♾️ ความรัก</span>
+    </div>
+    <div class="cart-actions" id="cartActions" style="display:none;">
+      <button class="btn-secondary" onclick="goToPage('shop')">
+        เลือกสินค้าเพิ่ม
+      </button>
+      <button class="btn-primary" onclick="openCheckoutModal()">
+        Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== PAGE 4: THANK YOU ===== -->
+  <div class="page" id="page-thankyou">
+    <div class="thankyou-icon">♡</div>
+    <h1 class="thankyou-title">ขอบคุณค้าบ~</h1>
+    <div class="thankyou-photo">
+      <img src="images/รูปคู่.PNG" alt="รูปคู่">
+    </div>
+    <div class="divider"></div>
+    <div class="thankyou-message" id="thankyouMessage"></div>
+    <p class="thankyou-name" id="thankyouName"></p>
+    <div class="pay-love-section" id="payLoveSection">
+      <button class="btn-pay-love" id="btnPayLove" onclick="payWithLove(event)">
+        ♡ ส่งความรัก
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
